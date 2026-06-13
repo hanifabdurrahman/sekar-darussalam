@@ -1,6 +1,9 @@
 import React from "react";
 import { motion } from "motion/react";
 import { Check, ShieldCheck } from "lucide-react";
+import ApsiImg1 from "../assets/images/APSI/APSI1.jpeg";
+import ApsiImg2 from "../assets/images/APSI/APSI2.jpeg";
+import ApsiImg3 from "../assets/images/APSI/APSI3.jpeg";
 
 export default function ApsiSection() {
   const credibilityPoints = [
@@ -31,7 +34,7 @@ export default function ApsiSection() {
               className="relative overflow-hidden rounded-2xl border border-stone-200 aspect-[16/10] sm:aspect-[16/10] w-full shadow-sm bg-stone-50"
             >
               <img
-                src="/src/assets/images/APSI/APSI1.jpeg"
+                src={ApsiImg1}
                 alt="Forum Edukasi Properti Syariah Asosiasi"
                 referrerPolicy="no-referrer"
                 className="w-full h-full object-cover"
@@ -51,7 +54,7 @@ export default function ApsiSection() {
               {/* Foto Kedua (Aktivitas resmi / Penandatanganan) */}
               <div className="relative overflow-hidden rounded-xl border border-stone-200 aspect-[16/11] bg-stone-50 shadow-2xs">
                 <img
-                  src="/src/assets/images/APSI/APSI2.jpeg"
+                  src={ApsiImg2}
                   alt="Aktivitas Penandatanganan Resmi"
                   referrerPolicy="no-referrer"
                   className="w-full h-full object-cover"
@@ -61,7 +64,7 @@ export default function ApsiSection() {
               {/* Foto Ketiga (Komunitas / Forum Anggota) */}
               <div className="relative overflow-hidden rounded-xl border border-stone-200 aspect-[16/11] bg-stone-50 shadow-2xs">
                 <img
-                  src="/src/assets/images/APSI/APSI3.jpeg"
+                  src={ApsiImg3}
                   alt="Forum Ekosistem Properti Syariah"
                   referrerPolicy="no-referrer"
                   className="w-full h-full object-cover"

@@ -306,20 +306,3 @@ export const FAQ_ITEMS: FAQItem[] = [
       "Tentu bisa. Untuk pembelian dengan akad pesanan bangun (istishna), kami menyediakan fasilitas konsultasi tata interior ruang secara gratis selama tidak mengubah batas luar bangunan.",
   },
 ];
-
-export const SOCIAL_PROOFS = [
-  {
-    name: "Bapak Haris & Ibu Nisa",
-    status: "Pembeli Kavling 04",
-    avatarText: "HN",
-    comment:
-      "Alhamdulillah, membeli lewat skema Bank Syariah di sini sangat menenangkan. Angsuran murni flat tanpa khawatir bunga mengambang atau denda.",
-  },
-  {
-    name: "Ibu Fatimah",
-    status: "Pembeli Kavling 11",
-    avatarText: "IF",
-    comment:
-      "Kami sangat mengapresiasi visi developer menyediakan sarana Rumah Tahfidz demi masa depan adab dan akhlak anak-anak di kompleks.",
-  },
-];
