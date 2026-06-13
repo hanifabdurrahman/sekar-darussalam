@@ -4,6 +4,7 @@ import { Play, Volume2, Shield } from "lucide-react";
 
 // Easily editable video URL or ID. Can be a YouTube embed code or direct video file path.
 import kawasanVideo from "../assets/Video/Video_Gate.mp4";
+import thumbnail from "../assets/images/Headline.jpeg";
 
 export default function VideoSection() {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -51,7 +52,7 @@ export default function VideoSection() {
                   onClick={() => setIsPlaying(true)}
                 >
                   <img
-                    src="/src/assets/images/Headline.jpeg"
+                    src={thumbnail}
                     alt="Visualisasi Kawasan Sekar Darussalam Drone View"
                     className="w-full h-full object-cover group-hover:scale-[1.01] transition-transform duration-700"
                     referrerPolicy="no-referrer"
