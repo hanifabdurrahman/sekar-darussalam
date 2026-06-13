@@ -1,20 +1,61 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
+# Sekar Darussalam Islamic Village
 
-# Run and deploy your AI Studio app
+Landing page resmi Sekar Darussalam Islamic Village, hunian syariah yang berlokasi di Klaten.
 
-This contains everything you need to run your app locally.
+## Fitur
 
-View your app in AI Studio: https://ai.studio/apps/038e5f30-e2a3-4269-9055-a0924c952038
+- Informasi keunggulan kawasan
+- Rumah Tahfidz
+- Video kawasan
+- Siteplan kawasan
+- Tipe unit rumah
+- Video interior
+- Legalitas & pengembangan kawasan
+- Skema pembayaran
+- Integrasi WhatsApp
 
-## Run Locally
+## Teknologi
 
-**Prerequisites:**  Node.js
+- React
+- TypeScript
+- Vite
+- Tailwind CSS
+- Motion
 
+## Menjalankan Project
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+Install dependencies:
+
+```bash
+npm install
+```
+
+Jalankan development server:
+
+```bash
+npm run dev
+```
+
+Build production:
+
+```bash
+npm run build
+```
+
+Preview hasil build:
+
+```bash
+npm run preview
+```
+
+## Deployment
+
+Project dapat di-deploy menggunakan:
+
+- Cloudflare Pages
+- Vercel
+- Netlify
+
+## Developer
+
+Landing page Sekar Darussalam Islamic Village.
