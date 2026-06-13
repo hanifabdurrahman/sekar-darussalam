@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "motion/react";
 import { MapPin, ExternalLink } from "lucide-react";
+import location from "../assets/images/lokasi perum.png";
 
 export default function LocationSection() {
   const strategicPoints = [
@@ -55,7 +56,7 @@ export default function LocationSection() {
               className="relative w-full flex-grow min-h-[350px] sm:min-h-[420px] lg:h-full rounded-2xl sm:rounded-3xl overflow-hidden shadow-md border border-[#E7E5E4] bg-stone-100 block group cursor-pointer"
             >
               <img
-                src="src\assets\images\lokasi perum.png"
+                src={location}
                 alt="Peta Lokasi Sekar Darussalam"
                 referrerPolicy="no-referrer"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"

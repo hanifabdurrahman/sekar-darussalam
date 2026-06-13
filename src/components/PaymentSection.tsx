@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { PROJECT_INFO } from "../data";
 import { WhatsAppIcon } from "./WhatsAppIcon";
 import { ShieldCheck, Coins, CheckCircle } from "lucide-react";
+import BankLogo from "../assets/images/Logo_Bank_Syariah_Nasional.png";
 
 export default function PaymentSection() {
   const [activeTab, setActiveTab] = useState<"kpr" | "cash">("kpr");
@@ -86,7 +87,7 @@ export default function PaymentSection() {
                 <div className="md:col-span-4 bg-white p-5 rounded-2xl border border-stone-200 flex flex-col justify-center items-center shadow-xs">
                   <div className="flex items-center bg-[#FAF9F6] px-4 py-3.5 rounded-xl border border-stone-100 w-full justify-center">
                     <img
-                      src="/src/assets/images/Logo_Bank_Syariah_Nasional.png"
+                      src={BankLogo}
                       alt="Logo Bank Syariah Nasional"
                       className="h-10 w-auto object-contain"
                     />

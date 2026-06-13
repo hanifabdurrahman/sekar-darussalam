@@ -1,5 +1,8 @@
 import React from "react";
 import { motion } from "motion/react";
+import ShmImage from "../assets/images/konversi-shgb-ke-shm.jpg";
+import PbgImage from "../assets/images/ilustrasi_pbg.png";
+import JlnImage from "../assets/images/jalan_perum.jpeg";
 
 export default function ProgressSection() {
   const points = [
@@ -7,21 +10,21 @@ export default function ProgressSection() {
       title: "SHM Pecah Kavling",
       description:
         "Lahan berstatus tanah murni lunas sempurna tanpa sengketa. Sertifikat SHM siap pecah di bawah pengawasan Notaris PPAT resmi.",
-      image: "/src/assets/images/konversi-shgb-ke-shm.jpg",
+      image: ShmImage,
       badge: "Legalitas Lahan",
     },
     {
       title: "Dokumen PBG/IMB Tersedia",
       description:
         "Persetujuan Bangunan Gedung (PBG/IMB) induk resmi terbit, menjamin aspek legalitas penuh dalam mendirikan hunian.",
-      image: "/src/assets/images/ilustrasi_pbg.png",
+      image: PbgImage,
       badge: "Izin Resmi",
     },
     {
       title: "Jalan Lingkungan Lebar ±6 Meter",
       description:
         "Akses jalan paving block berkualitas tinggi lebar ±6 meter dirancang kokoh dan aman untuk mobilitas nyaman sehari-hari.",
-      image: "/src/assets/images/jalan_perum.jpeg",
+      image: JlnImage,
       badge: "Infrastruktur",
     },
   ];

@@ -1,6 +1,6 @@
 import React from "react";
 import { Award, ChevronRight, Check } from "lucide-react";
-
+import TahfidzImg from "../assets/images/tpa_kids_quran_1780334909745.png";
 export default function TahfidzSection() {
   return (
     <section
@@ -13,7 +13,7 @@ export default function TahfidzSection() {
           <div className="lg:col-span-5 relative">
             <div className="relative rounded-3xl overflow-hidden aspect-[4/5] shadow-lg border border-[#E7E5E4]">
               <img
-                src="/src/assets/images/tpa_kids_quran_1780334909745.png"
+                src={TahfidzImg}
                 alt="Ilustrasi Pembelajaran Quran Kebersamaan"
                 className="w-full h-full object-cover grayscale-[10%]"
                 referrerPolicy="no-referrer"

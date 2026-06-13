@@ -2,7 +2,8 @@ import React from "react";
 import { motion } from "motion/react";
 import { Check } from "lucide-react";
 
-const benefitHousingImg = "/src/assets/images/benefits.jpeg";
+import benefitHousingImg from "../assets/images/benefits.jpeg";
+import logoAPSI from "../assets/images/Logo_APSI.png";
 
 export default function BenefitsSection() {
   const points = [
@@ -94,7 +95,7 @@ export default function BenefitsSection() {
               className="flex items-center gap-4 py-2.5 px-4 rounded-2xl border border-emerald-100 bg-white shadow-[0_2px_12px_rgba(22,101,52,0.02)] max-w-sm"
             >
               <img
-                src="/src/assets/images/Logo_APSI.png"
+                src={logoAPSI}
                 alt="Logo Asosiasi Properti Syariah Indonesia"
                 className="w-30 h-20 sm:w-16 sm:h-16 rounded-xl object-cover border border-emerald-100/80 shrink-0 shadow-3xs"
                 referrerPolicy="no-referrer"

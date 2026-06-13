@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { ZoomIn, X, RefreshCw, Download } from "lucide-react";
 
+import siteplanImgSrc from "../assets/images/siteplan.jpeg";
+
 export default function SiteplanSection() {
   const [isOpen, setIsOpen] = useState(false);
   const [zoomScale, setZoomScale] = useState(1);
-
-  const siteplanImgSrc = "/src/assets/images/siteplan.jpeg";
 
   const handleZoomIn = () => {
     setZoomScale((prev) => Math.min(prev + 0.25, 3));

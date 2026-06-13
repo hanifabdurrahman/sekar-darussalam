@@ -10,8 +10,7 @@ import {
 } from "lucide-react";
 import { PROJECT_INFO } from "../data";
 import { WhatsAppIcon } from "./WhatsAppIcon";
-
-const heroHousingImg = "/src/assets/images/Headline.jpeg";
+import heroHousingImg from "../assets/images/Headline.jpeg";
 
 export default function HeroSection() {
   const waTanyakanUnit = `https://wa.me/${PROJECT_INFO.whatsappNumber}?text=${encodeURIComponent("Assalamu'alaikum, saya ingin bertanya mengenai ketersediaan unit yang masih tersedia di Sekar Darussalam Islamic Village. Terima kasih.")}`;

@@ -4,17 +4,13 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
 import { PROJECT_INFO } from "../data";
 import { WhatsAppIcon } from "./WhatsAppIcon";
-import {
-  Ruler,
-  Maximize2,
-  BedDouble,
-  Bath,
-  ArrowRight,
-  CheckCircle2,
-} from "lucide-react";
+import { Ruler, Maximize2, BedDouble, Bath, CheckCircle2 } from "lucide-react";
 
 import "swiper/css";
 import "swiper/css/pagination";
+
+// image
+import facade01 from "../assets/images/facade01.png";
 
 interface UnitTypeData {
   id: "tipe36" | "tipe45";
@@ -50,7 +46,7 @@ const UNIT_PLANS: UnitTypeData[] = [
     carports: "1 Mobil",
     description:
       "Ideal untuk pasangan muda atau keluarga kecil yang menginginkan rumah pertama dengan ruang yang fungsional.",
-    facadeImg: "/src/assets/images/facade01.png",
+    facadeImg: facade01,
     dimensions: "Lebar 6.0m x Panjang 12.0m",
   },
 ];
