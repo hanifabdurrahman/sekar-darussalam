@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  /* Premium Modern Islamic Color Theme */
+  --color-brand-gray: #0f172a;        /* Primary Text */
+  --color-brand-emerald: #166534;     /* Primary Brand Green */
+  --color-brand-teal: #0f766e;        /* Secondary Green */
+  --color-brand-gold: #d4a017;        /* Accent Gold */
+  --color-brand-gold-light: #fef3c7;  /* High-contrast gold accents */
+  --color-brand-cta: #15803D;         /* CTA Green */
+  --color-brand-cream: #faf8f3;       /* Background Cream */
+  --color-brand-cream-deep: #f7f3ea;  /* Secondary Background */
+  --color-brand-border: #e7e5e4;      /* Light Border */
+
+  /* Fine Typography */
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-heading: "Poppins", "Inter", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-sans);
+}
+
+body {
+  background-color: #faf8f3; /* Warm Cream background as default */
+  color: #0f172a; /* Deep slate as primary text */
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar for premium feel */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}

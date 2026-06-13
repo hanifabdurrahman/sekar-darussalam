@@ -1,0 +1,6 @@
+{
+  "name": "Sekar Darussalam Islamic Village",
+  "description": "Premium Islamic living landing page for Sekar Darussalam Islamic Village under construction in Klaten, Central Java.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
