@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "motion/react";
 import { Menu, X } from "lucide-react";
 import { PROJECT_INFO } from "../data";
 import { WhatsAppIcon } from "./WhatsAppIcon";
-import logoSekar from "../assets/images/logo_navbar.png";
+import logoSekar from "../assets/images/Logo.png";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -73,22 +73,13 @@ export default function Navbar() {
             e.preventDefault();
             window.scrollTo({ top: 0, behavior: "smooth" });
           }}
-          className="flex items-center gap-3 group"
+          className="group"
         >
           <img
             src={logoSekar}
             alt="Sekar Darussalam Islamic Village"
-            className="w-14 h-14 md:w-12 md:h-12 object-contain transition-transform duration-200 group-hover:scale-[1.05]"
+            className="h-12 md:h-14 w-auto object-contain transition-transform duration-200 group-hover:scale-[1.02]"
           />
-
-          <div className="hidden sm:block leading-none">
-            <span className="block font-heading font-extrabold text-sm md:text-base text-[#254419] tracking-tight">
-              Sekar Darussalam
-            </span>
-            <span className="block text-[10px] md:text-xs font-bold text-[#D4A017] uppercase tracking-wider mt-1">
-              Islamic Village
-            </span>
-          </div>
         </a>
 
         {/* Desktop Links */}

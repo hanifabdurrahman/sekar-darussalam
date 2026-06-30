@@ -1,8 +1,8 @@
 import React from "react";
 import { motion } from "motion/react";
-import ShmImage from "../assets/images/konversi-shgb-ke-shm.jpg";
-import PbgImage from "../assets/images/ilustrasi_pbg.png";
-import JlnImage from "../assets/images/jalan_perum.jpeg";
+import ShmImage from "../assets/images/konversi-shgb-ke-shm.webp";
+import PbgImage from "../assets/images/gambar_pbg.webp";
+import JlnImage from "../assets/images/jalan_perum.webp";
 
 export default function ProgressSection() {
   const points = [

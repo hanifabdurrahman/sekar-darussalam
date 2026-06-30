@@ -8,6 +8,7 @@ import SiteplanSection from "./components/SiteplanSection";
 import LocationSection from "./components/LocationSection";
 import HouseTypeSection from "./components/HouseTypeSection";
 import InteriorVideoSection from "./components/InteriorVideoScetion";
+import TestimonialSection from "./components/TestimonialSection";
 import ProgressSection from "./components/ProgressSection";
 import PaymentSection from "./components/PaymentSection";
 import ApsiSection from "./components/ApsiSection";
@@ -43,6 +44,9 @@ export default function App() {
 
         {/* 5b. Walkthrough Interior Living Room Experience */}
         <InteriorVideoSection />
+
+        {/* 5c. Testimoni & Cerita Penghuni */}
+        <TestimonialSection />
 
         {/* 6. Local Amenities Radar & Maps Location */}
         <LocationSection />

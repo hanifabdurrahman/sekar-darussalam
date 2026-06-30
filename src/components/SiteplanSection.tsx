@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { ZoomIn, X, RefreshCw, Download } from "lucide-react";
 
-import siteplanImgSrc from "../assets/images/siteplan.jpeg";
+import siteplanImgSrc from "../assets/images/SITE_PLAN.png";
 
 export default function SiteplanSection() {
   const [isOpen, setIsOpen] = useState(false);

@@ -1,9 +1,9 @@
 import React from "react";
 import { motion } from "motion/react";
 import { Check, ShieldCheck } from "lucide-react";
-import ApsiImg1 from "../assets/images/APSI/APSI1.jpeg";
-import ApsiImg2 from "../assets/images/APSI/APSI2.jpeg";
-import ApsiImg3 from "../assets/images/APSI/APSI3.jpeg";
+import ApsiImg1 from "../assets/images/APSI/APSI1.webp";
+import ApsiImg2 from "../assets/images/APSI/APSI2.webp";
+import ApsiImg3 from "../assets/images/APSI/APSI3.webp";
 
 export default function ApsiSection() {
   const credibilityPoints = [

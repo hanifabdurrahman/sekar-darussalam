@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { PROJECT_INFO } from "../data";
 import { WhatsAppIcon } from "./WhatsAppIcon";
 import { ShieldCheck, Coins, CheckCircle } from "lucide-react";
-import BankLogo from "../assets/images/Logo_Bank_Syariah_Nasional.png";
+import BankLogo from "../assets/images/Logo_Bank_Syariah_Nasional.webp";
 
 export default function PaymentSection() {
   const [activeTab, setActiveTab] = useState<"kpr" | "cash">("kpr");
