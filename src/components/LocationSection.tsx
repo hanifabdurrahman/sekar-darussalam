@@ -1,29 +1,65 @@
 import React from "react";
 import { motion } from "motion/react";
-import { MapPin, ExternalLink } from "lucide-react";
+// Ganti emoji dengan ikon profesional dari Lucide
+import {
+  MapPin,
+  ExternalLink,
+  GraduationCap,
+  HeartPulse,
+  MoonStar,
+  Train,
+  Route,
+} from "lucide-react";
 import location from "../assets/images/lokasi perum.png";
 
 export default function LocationSection() {
+  // Menggunakan ikon Lucide alih-alih emoji
   const strategicPoints = [
     {
-      emoji: "📚",
+      icon: GraduationCap,
       name: "Universitas Muhammadiyah Klaten (UMKLA)",
       duration: "±5 menit",
     },
     {
-      emoji: "📚",
+      icon: GraduationCap,
       name: "SDIT & SMPIT Unggulan Klaten Selatan",
       duration: "±5 menit",
     },
-    { emoji: "❤️", name: "RSUD Bagas Waras Klaten", duration: "±3 menit" },
-    { emoji: "🕌", name: "Masjid Agung Al-Aqsha Klaten", duration: "±9 menit" },
     {
-      emoji: "🚆",
+      icon: HeartPulse,
+      name: "RSUD Bagas Waras Klaten",
+      duration: "±3 menit",
+    },
+    {
+      icon: MoonStar,
+      name: "Masjid Agung Al-Aqsha Klaten",
+      duration: "±9 menit",
+    },
+    {
+      icon: Train,
       name: "Stasiun Klaten (Akses KRL Jogja–Solo)",
       duration: "±6 menit",
     },
-    { emoji: "🛣️", name: "Jalan Provinsi Jogja–Solo", duration: "±8 menit" },
+    {
+      icon: Route,
+      name: "Jalan Provinsi Jogja–Solo",
+      duration: "±8 menit",
+    },
   ];
+
+  // Variabel animasi untuk efek muncul berurutan
+  const itemVariants = {
+    hidden: { opacity: 0, x: 20 },
+    visible: (i: number) => ({
+      opacity: 1,
+      x: 0,
+      transition: {
+        delay: i * 0.1,
+        duration: 0.4,
+        ease: "easeOut",
+      },
+    }),
+  };
 
   return (
     <section
@@ -45,9 +81,9 @@ export default function LocationSection() {
           </p>
         </div>
 
-        {/* New 60/40 Redesigned Layout Grid */}
+        {/* Layout Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch">
-          {/* Left Side: 60% Map Area */}
+          {/* Left Side: Map Area */}
           <div className="lg:col-span-7 xl:col-span-8 flex flex-col h-full">
             <a
               href="https://maps.app.goo.gl/iyubG1WocS7R29J68"
@@ -63,7 +99,7 @@ export default function LocationSection() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-stone-900/50 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-300"></div>
 
-              {/* Premium Float Label Overlay (Absolute Marker) */}
+              {/* Premium Float Label Overlay */}
               <div className="absolute top-4 left-4 z-10 bg-white/95 backdrop-blur-md px-4 py-3 rounded-xl border border-emerald-100/80 shadow-md max-w-xs transition-all pointer-events-none">
                 <div className="flex items-center gap-2">
                   <span className="flex h-2 w-2 relative">
@@ -90,44 +126,50 @@ export default function LocationSection() {
             </a>
           </div>
 
-          {/* Right Side: 40% Simple Structured Content */}
+          {/* Right Side: Structured Content */}
           <div className="lg:col-span-5 xl:col-span-4 flex flex-col justify-between bg-white border border-[#E7E5E4] rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-xs">
-            <div className="space-y-6">
-              <div>
+            <div className="space-y-4">
+              <div className="mb-6">
                 <h3 className="font-heading text-lg sm:text-xl font-extrabold text-[#0F172A] mb-1">
                   Fasilitas Penting dalam Hitungan Menit
                 </h3>
               </div>
 
-              {/* Minimal Single-level bullet points */}
-              <div className="space-y-4 border-t border-stone-100 pt-5">
+              {/* MODERN POI LIST */}
+              <div className="space-y-2">
                 {strategicPoints.map((point, index) => (
-                  <div
+                  <motion.div
+                    custom={index}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, margin: "-50px" }}
+                    variants={itemVariants}
                     key={index}
-                    className="flex items-start justify-between gap-3 text-xs sm:text-sm"
+                    className="group flex items-center justify-between p-2.5 sm:p-3 rounded-xl hover:bg-stone-50 border border-transparent hover:border-stone-100 transition-all duration-300"
                   >
-                    <div className="flex items-center gap-2.5">
-                      <span
-                        className="text-base select-none shrink-0"
-                        role="img"
-                        aria-label="p"
-                      >
-                        {point.emoji}
-                      </span>
-                      <span className="text-slate-700 font-bold leading-tight">
+                    <div className="flex items-center gap-3.5">
+                      {/* Modern Icon Container */}
+                      <div className="w-9 h-9 rounded-full bg-emerald-50 text-[#166534] flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300 shadow-3xs">
+                        <point.icon className="w-4 h-4 stroke-[2.5]" />
+                      </div>
+                      <span className="text-slate-700 font-bold text-xs sm:text-sm leading-tight">
                         {point.name}
                       </span>
                     </div>
-                    <span className="text-emerald-700 font-black font-mono shrink-0 text-[11px] sm:text-xs">
-                      {point.duration}
-                    </span>
-                  </div>
+
+                    {/* Modern Duration Badge */}
+                    <div className="bg-emerald-50/70 px-2.5 py-1.5 rounded-lg border border-emerald-100/60 shrink-0">
+                      <span className="text-[#166534] font-bold font-mono text-[14px] sm:text-[15px] whitespace-nowrap block">
+                        {point.duration}
+                      </span>
+                    </div>
+                  </motion.div>
                 ))}
               </div>
             </div>
 
             {/* Single Core Call to Action */}
-            <div className="mt-8 pt-5 border-t border-stone-100">
+            <div className="mt-8 pt-6 border-t border-stone-100">
               <a
                 href="https://maps.app.goo.gl/iyubG1WocS7R29J68"
                 target="_blank"

@@ -89,7 +89,6 @@ export default function BenefitsSection() {
                   variants={listVariants}
                   key={idx}
                   whileHover={{ x: 5 }}
-                  // Diubah ke items-center agar teks presisi di tengah
                   className="flex items-center gap-4 p-4 sm:p-5 rounded-2xl border border-[#E7E5E4] bg-white hover:border-[#166534]/30 hover:shadow-lg hover:shadow-[#166534]/5 transition-all duration-300 cursor-default group"
                 >
                   {/* Ikon Container */}
