@@ -1,7 +1,24 @@
 import React from "react";
-import { Award, ChevronRight, Check } from "lucide-react";
+// 1. Tambahkan import BookOpen, Users, dan Map di sini
+import { Award, ChevronRight, Check, BookOpen, Users, Map } from "lucide-react";
+import { motion } from "motion/react";
 import TahfidzImg from "../assets/images/tpa_kids_quran_1780334909745.png";
+
 export default function TahfidzSection() {
+  // 2. Tambahkan deklarasi listVariants di sini agar error framer-motion hilang
+  const listVariants = {
+    hidden: { opacity: 0, x: -20 },
+    visible: (i: number) => ({
+      opacity: 1,
+      x: 0,
+      transition: {
+        delay: i * 0.15,
+        duration: 0.5,
+        ease: "easeOut",
+      },
+    }),
+  };
+
   return (
     <section
       className="py-20 bg-[#FAF8F3] font-sans text-[#0F172A] border-b border-[#E7E5E4] relative overflow-hidden"
@@ -38,27 +55,41 @@ export default function TahfidzSection() {
               di lingkungan Sekar Darussalam.
             </p>
 
-            {/* Clear and concise bullet points */}
-            <ul className="space-y-3 pt-2">
-              <li className="flex items-start gap-2.5 text-xs sm:text-sm font-bold text-slate-740">
-                <div className="w-5 h-5 rounded-full bg-[#166534]/10 text-[#166534] flex items-center justify-center shrink-0 mt-0.5">
-                  <Check size={12} className="stroke-[3]" />
-                </div>
-                <span>Mendukung pembelajaran Al-Qur'an sejak dini</span>
-              </li>
-              <li className="flex items-start gap-2.5 text-xs sm:text-sm font-bold text-slate-740">
-                <div className="w-5 h-5 rounded-full bg-[#166534]/10 text-[#166534] flex items-center justify-center shrink-0 mt-0.5">
-                  <Check size={12} className="stroke-[3]" />
-                </div>
-                <span>Menjadi bagian dari aktivitas keluarga sehari-hari</span>
-              </li>
-              <li className="flex items-start gap-2.5 text-xs sm:text-sm font-bold text-slate-740">
-                <div className="w-5 h-5 rounded-full bg-[#166534]/10 text-[#166534] flex items-center justify-center shrink-0 mt-0.5">
-                  <Check size={12} className="stroke-[3]" />
-                </div>
-                <span>Dikembangkan secara bertahap dalam kawasan</span>
-              </li>
-            </ul>
+            {/* Modern Card-style List */}
+            <div className="grid grid-cols-1 gap-4 pt-2">
+              {[
+                {
+                  icon: BookOpen,
+                  text: "Mendukung pembelajaran Al-Qur'an sejak usia dini",
+                },
+                {
+                  icon: Users,
+                  text: "Menjadi bagian dari rutinitas dan aktivitas keluarga sehari-hari",
+                },
+                {
+                  icon: Map,
+                  text: "Dikembangkan secara bertahap di dalam kawasan perumahan",
+                },
+              ].map((item, index) => (
+                <motion.div
+                  custom={index}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, margin: "-50px" }}
+                  variants={listVariants}
+                  key={index}
+                  whileHover={{ x: 5, backgroundColor: "#ffffff" }}
+                  className="flex items-center gap-4 p-4 sm:p-5 rounded-2xl border border-[#E7E5E4] hover:border-[#166534]/30 hover:shadow-lg hover:shadow-[#166534]/5 transition-all duration-300 cursor-default group"
+                >
+                  <div className="w-12 h-12 rounded-full bg-white border border-[#E7E5E4] group-hover:bg-[#166534]/10 group-hover:border-[#166534]/20 text-slate-400 group-hover:text-[#166534] flex items-center justify-center shrink-0 transition-colors duration-300">
+                    <item.icon size={22} className="stroke-[2.5]" />
+                  </div>
+                  <span className="text-sm sm:text-base font-bold text-[#0F172A] group-hover:text-[#166534] transition-colors duration-300">
+                    {item.text}
+                  </span>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
