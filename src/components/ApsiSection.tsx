@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "motion/react";
-import { Check, ShieldCheck } from "lucide-react";
+// Import tambahan ikon ScrollText dan ShieldCheck
+import { ScrollText, ShieldCheck } from "lucide-react";
 import ApsiImg1 from "../assets/images/APSI/APSI1.webp";
 import ApsiImg2 from "../assets/images/APSI/APSI2.webp";
 import ApsiImg3 from "../assets/images/APSI/APSI3.webp";
@@ -9,11 +10,29 @@ export default function ApsiSection() {
   const credibilityPoints = [
     {
       title: "Akad Sesuai Prinsip Syariah",
+      desc: "Proses kepemilikan menggunakan akad syariah dengan skema yang transparan dan sesuai prinsip syariah.",
+      icon: ScrollText,
     },
     {
       title: "Diverifikasi Dewan Syariah APSI",
+      desc: "Telah diverifikasi oleh Dewan Syariah APSI untuk mendukung penerapan prinsip syariah.",
+      icon: ShieldCheck,
     },
   ];
+
+  // Variabel animasi untuk efek muncul bergantian
+  const listVariants = {
+    hidden: { opacity: 0, y: 15 },
+    visible: (i: number) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: i * 0.2,
+        duration: 0.5,
+        ease: "easeOut",
+      },
+    }),
+  };
 
   return (
     <section
@@ -23,9 +42,8 @@ export default function ApsiSection() {
       <div className="max-w-7xl mx-auto px-6">
         {/* Layout container */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
-          {/* Left Column: Image Area (Desktop) or Image Top (Mobile) */}
+          {/* Left Column: Image Area (Tetap sama seperti aslinya) */}
           <div className="lg:col-span-6 w-full space-y-3 sm:space-y-4">
-            {/* Foto Utama (Paling Besar) */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -39,11 +57,9 @@ export default function ApsiSection() {
                 referrerPolicy="no-referrer"
                 className="w-full h-full object-cover"
               />
-              {/* Overlay subtle shading */}
               <div className="absolute inset-0 bg-gradient-to-t from-stone-900/10 via-transparent to-transparent pointer-events-none" />
             </motion.div>
 
-            {/* Foto Kedua dan Ketiga (Grid) */}
             <motion.div
               initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -51,7 +67,6 @@ export default function ApsiSection() {
               transition={{ duration: 0.5, delay: 0.15 }}
               className="grid grid-cols-2 gap-3 sm:gap-4"
             >
-              {/* Foto Kedua (Aktivitas resmi / Penandatanganan) */}
               <div className="relative overflow-hidden rounded-xl border border-stone-200 aspect-[16/11] bg-stone-50 shadow-2xs">
                 <img
                   src={ApsiImg2}
@@ -61,7 +76,6 @@ export default function ApsiSection() {
                 />
               </div>
 
-              {/* Foto Ketiga (Komunitas / Forum Anggota) */}
               <div className="relative overflow-hidden rounded-xl border border-stone-200 aspect-[16/11] bg-stone-50 shadow-2xs">
                 <img
                   src={ApsiImg3}
@@ -96,25 +110,32 @@ export default function ApsiSection() {
               </p>
             </motion.div>
 
-            {/* List block */}
-            <div className="space-y-4.5 pt-2">
+            {/* List block - MODERN CARD */}
+            <div className="grid grid-cols-1 gap-4 pt-2">
               {credibilityPoints.map((point, index) => (
                 <motion.div
+                  custom={index}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, margin: "-50px" }}
+                  variants={listVariants}
                   key={index}
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.3, delay: index * 0.08 }}
-                  className="flex gap-3.5 p-3.5 rounded-xl border border-stone-100 bg-[#FAFBF9]/60 hover:bg-[#FAFBF9] transition-colors"
+                  whileHover={{ x: 5, backgroundColor: "#ffffff" }}
+                  className="flex items-start gap-4 p-4 sm:p-5 rounded-2xl border border-[#E7E5E4] bg-[#FAFBF9]/40 hover:border-[#166534]/30 hover:shadow-lg hover:shadow-[#166534]/5 transition-all duration-300 cursor-default group"
                 >
-                  <div className="flex items-center justify-center bg-emerald-50 text-emerald-700 border border-emerald-200/80 rounded-full w-7 h-7 sm:w-8 sm:h-8 shrink-0 mt-0.5 shadow-3xs">
-                    <Check className="w-3.5 h-3.5 sm:w-4 sm:h-4 stroke-[3]" />
+                  {/* Ikon Container */}
+                  <div className="w-12 h-12 rounded-full bg-white border border-[#E7E5E4] group-hover:bg-[#166534]/10 group-hover:border-[#166534]/20 text-slate-400 group-hover:text-[#166534] flex items-center justify-center shrink-0 transition-colors duration-300 shadow-sm">
+                    <point.icon size={22} className="stroke-[2.5]" />
                   </div>
 
-                  <div className="space-y-2">
-                    <h3 className="font-heading text-sm sm:text-base font-bold text-[#0F172A]">
+                  {/* Teks Container */}
+                  <div className="space-y-1.5 mt-0.5">
+                    <h3 className="font-heading text-sm sm:text-base font-bold text-[#0F172A] group-hover:text-[#166534] transition-colors duration-300">
                       {point.title}
                     </h3>
+                    <p className="text-xs sm:text-sm text-slate-500 font-medium leading-relaxed">
+                      {point.desc}
+                    </p>
                   </div>
                 </motion.div>
               ))}
