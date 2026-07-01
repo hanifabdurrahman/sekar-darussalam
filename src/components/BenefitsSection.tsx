@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "motion/react";
-import { Check } from "lucide-react";
+import { Leaf, Building, ScrollText } from "lucide-react";
 
 import benefitHousingImg from "../assets/images/benefits.jpeg";
 import logoAPSI from "../assets/images/Logo_APSI.png";
@@ -9,14 +9,30 @@ export default function BenefitsSection() {
   const points = [
     {
       title: "Lingkungan yang Nyaman",
+      icon: Leaf,
     },
     {
       title: "Kualitas Bangunan Terpercaya",
+      icon: Building,
     },
     {
       title: "Akad Sesuai Prinsip Syariah",
+      icon: ScrollText,
     },
   ];
+
+  const listVariants = {
+    hidden: { opacity: 0, y: 15 },
+    visible: (i: number) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: i * 0.15,
+        duration: 0.5,
+        ease: "easeOut",
+      },
+    }),
+  };
 
   return (
     <section
@@ -28,7 +44,7 @@ export default function BenefitsSection() {
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-          {/* Left Column: Visual (Adjusted to about 50%-55% on desktop to prevent narrow text) */}
+          {/* Left Column: Visual */}
           <div className="lg:col-span-6">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
@@ -47,8 +63,8 @@ export default function BenefitsSection() {
             </motion.div>
           </div>
 
-          {/* Right Column: Content (45%-50% on desktop, wider text flow) */}
-          <div className="lg:col-span-6 space-y-12 text-left">
+          {/* Right Column: Content */}
+          <div className="lg:col-span-6 space-y-10 text-left">
             <div>
               <span className="text-[#166534] text-xs font-bold uppercase tracking-widest bg-[#166534]/10 px-3.5 py-1.5 rounded-full border border-[#166534]/20 inline-block mb-6 shadow-3xs">
                 Nilai yang Kami Utamakan
@@ -62,37 +78,42 @@ export default function BenefitsSection() {
               </p>
             </div>
 
-            {/* 3 Poin Manfaat - Strictly Cardless & Plain List with Enhanced Spacing */}
-            <div className="space-y-9">
+            {/* 3 Poin Manfaat - Card Style Tanpa Deskripsi */}
+            <div className="grid grid-cols-1 gap-4">
               {points.map((pt, idx) => (
                 <motion.div
+                  custom={idx}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, margin: "-50px" }}
+                  variants={listVariants}
                   key={idx}
-                  initial={{ opacity: 0, y: 15 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: idx * 0.1 }}
-                  className="flex gap-4 items-start"
+                  whileHover={{ x: 5 }}
+                  // Diubah ke items-center agar teks presisi di tengah
+                  className="flex items-center gap-4 p-4 sm:p-5 rounded-2xl border border-[#E7E5E4] bg-white hover:border-[#166534]/30 hover:shadow-lg hover:shadow-[#166534]/5 transition-all duration-300 cursor-default group"
                 >
-                  {/* Premium Green Checkmark Icon */}
-                  <div className="flex items-center justify-center bg-emerald-50 text-emerald-700 border border-emerald-200/80 rounded-full w-7 h-7 sm:w-8 sm:h-8 shrink-0 mt-0.5 shadow-3xs">
-                    <Check className="w-3.5 h-3.5 sm:w-4 sm:h-4 stroke-[3]" />
+                  {/* Ikon Container */}
+                  <div className="w-12 h-12 rounded-full bg-white border border-[#E7E5E4] group-hover:bg-[#166534]/10 group-hover:border-[#166534]/20 text-slate-400 group-hover:text-[#166534] flex items-center justify-center shrink-0 transition-colors duration-300 shadow-sm">
+                    <pt.icon size={22} className="stroke-[2.5]" />
                   </div>
 
-                  <div className="space-y-2">
-                    <h3 className="font-heading text-sm sm:text-base font-bold text-[#0F172A]">
+                  {/* Teks Container - Hanya tersisa judul */}
+                  <div>
+                    <h3 className="font-heading text-sm sm:text-base font-bold text-[#0F172A] group-hover:text-[#166534] transition-colors duration-300">
                       {pt.title}
                     </h3>
                   </div>
                 </motion.div>
               ))}
             </div>
-            {/* Custom Trust Badge APSI - Elegant, lightweight and highly credible */}
+
+            {/* Custom Trust Badge APSI */}
             <motion.div
               initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              className="flex items-center gap-4 py-2.5 px-4 rounded-2xl border border-emerald-100 bg-white shadow-[0_2px_12px_rgba(22,101,52,0.02)] max-w-sm"
+              transition={{ duration: 0.5, delay: 0.5 }}
+              className="flex items-center gap-4 py-2.5 px-4 rounded-2xl border border-emerald-100 bg-white shadow-[0_2px_12px_rgba(22,101,52,0.02)] max-w-sm mt-4"
             >
               <img
                 src={logoAPSI}
