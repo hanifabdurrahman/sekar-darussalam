@@ -54,6 +54,7 @@ export default function VideoSection() {
                   <img
                     src={thumbnail}
                     alt="Visualisasi Kawasan Sekar Darussalam Drone View"
+                    loading="lazy"
                     className="w-full h-full object-cover group-hover:scale-[1.01] transition-transform duration-700"
                     referrerPolicy="no-referrer"
                   />

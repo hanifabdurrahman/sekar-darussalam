@@ -89,6 +89,7 @@ export default function PaymentSection() {
                     <img
                       src={BankLogo}
                       alt="Logo Bank Syariah Nasional"
+                      loading="lazy"
                       className="h-10 w-auto object-contain"
                     />
                   </div>

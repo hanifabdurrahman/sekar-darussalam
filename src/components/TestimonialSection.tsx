@@ -78,6 +78,7 @@ export default function TestimonialSection() {
                       <img
                         src={testi.thumbnail}
                         alt="Testimonial Sekar Darussalam"
+                        loading="lazy"
                         className="w-full h-full object-cover group-hover:scale-[1.015] transition-transform duration-700"
                         referrerPolicy="strict-origin-when-cross-origin"
                       />

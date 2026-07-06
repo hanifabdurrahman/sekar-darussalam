@@ -95,6 +95,7 @@ export default function LocationSection() {
                 src={location}
                 alt="Peta Lokasi Sekar Darussalam"
                 referrerPolicy="no-referrer"
+                loading="lazy"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-stone-900/50 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-300"></div>

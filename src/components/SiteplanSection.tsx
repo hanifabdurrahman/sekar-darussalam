@@ -67,6 +67,7 @@ export default function SiteplanSection() {
               <img
                 src={siteplanImgSrc}
                 alt="Tata Letak Kavling Sekar Darussalam"
+                loading="lazy"
                 className="w-full h-full object-cover sm:object-contain group-hover:scale-[1.015] transition-transform duration-500"
                 referrerPolicy="no-referrer"
               />
@@ -143,6 +144,7 @@ export default function SiteplanSection() {
                 <img
                   src={siteplanImgSrc}
                   alt="Siteplan Sekar Darussalam Fullscreen Zoomed View"
+                  loading="lazy"
                   className="max-h-[80vh] max-w-full object-contain rounded-lg shadow-2xl pointer-events-none"
                   referrerPolicy="no-referrer"
                 />

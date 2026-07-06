@@ -78,6 +78,7 @@ export default function Navbar() {
           <img
             src={logoSekar}
             alt="Sekar Darussalam Islamic Village"
+            loading="lazy"
             className="h-12 md:h-14 w-auto object-contain transition-transform duration-200 group-hover:scale-[1.02]"
           />
         </a>

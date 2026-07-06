@@ -32,6 +32,7 @@ export default function TahfidzSection() {
               <img
                 src={TahfidzImg}
                 alt="Ilustrasi Pembelajaran Quran Kebersamaan"
+                loading="lazy"
                 className="w-full h-full object-cover grayscale-[10%]"
                 referrerPolicy="no-referrer"
               />

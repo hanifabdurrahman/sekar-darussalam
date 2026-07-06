@@ -55,6 +55,7 @@ export default function ApsiSection() {
                 src={ApsiImg1}
                 alt="Forum Edukasi Properti Syariah Asosiasi"
                 referrerPolicy="no-referrer"
+                loading="lazy"
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-stone-900/10 via-transparent to-transparent pointer-events-none" />
@@ -72,6 +73,7 @@ export default function ApsiSection() {
                   src={ApsiImg2}
                   alt="Aktivitas Penandatanganan Resmi"
                   referrerPolicy="no-referrer"
+                  loading="lazy"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -81,6 +83,7 @@ export default function ApsiSection() {
                   src={ApsiImg3}
                   alt="Forum Ekosistem Properti Syariah"
                   referrerPolicy="no-referrer"
+                  loading="lazy"
                   className="w-full h-full object-cover"
                 />
               </div>

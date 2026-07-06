@@ -72,6 +72,7 @@ export default function ProgressSection() {
                   src={point.image}
                   alt={point.title}
                   referrerPolicy="no-referrer"
+                  loading="lazy"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
                 />
               </div>

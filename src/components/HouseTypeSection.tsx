@@ -79,6 +79,7 @@ function UnitCard({ unit, handleContactWA }: UnitCardProps) {
         <img
           src={unit.facadeImg}
           alt={unit.title}
+          loading="lazy"
           className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
           referrerPolicy="no-referrer"
         />

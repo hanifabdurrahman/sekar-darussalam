@@ -56,6 +56,7 @@ export default function BenefitsSection() {
               <img
                 src={benefitHousingImg}
                 alt="Suasana Kawasan Sekar Darussalam Islamic Village"
+                loading="lazy"
                 className="w-full h-full object-cover group-hover:scale-[1.015] transition-transform duration-500"
                 referrerPolicy="no-referrer"
               />
@@ -117,6 +118,7 @@ export default function BenefitsSection() {
               <img
                 src={logoAPSI}
                 alt="Logo Asosiasi Properti Syariah Indonesia"
+                loading="lazy"
                 className="w-30 h-20 sm:w-16 sm:h-16 rounded-xl object-cover border border-emerald-100/80 shrink-0 shadow-3xs"
                 referrerPolicy="no-referrer"
               />

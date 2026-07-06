@@ -36,6 +36,7 @@ export default function HeroSection() {
           transition={{ duration: 1.2, ease: "easeOut" }}
           src={heroHousingImg}
           alt="Sekar Darussalam Islamic Village"
+          loading="lazy"
           className="w-full h-full object-cover object-center lg:object-[center_25%]"
           referrerPolicy="no-referrer"
         />
